@@ -1,0 +1,180 @@
+﻿@page "/"
+
+@using Car_Rental.Business.Classes
+@using Car_Rental.Common.Enums
+
+<h1>Car Rental Assignment - C# .Net Blazor</h1>
+
+<h3>Vehicles</h3>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">RegNo</th>
+            <th scope="col">Make</th>
+            <th scope="col">Odometer</th>
+            <th scope="col">Cost km</th>
+            <th scope="col">Vehicle type</th>
+            <th scope="col">$ Day</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var vehicle in bp.GetVehicles())
+        {
+        <tr>
+            <th scope="row">@vehicle.RegistrationNumber</th>
+            <td>@vehicle.Make</td>
+            <td>@vehicle.Odometer</td>
+            <td>@vehicle.CostKM</td>
+            <td>@vehicle.Type</td>
+            <td>@vehicle.CostPerDay</td>
+            @if (vehicle.Status == VehicleStatuses.Available)
+            {
+                <td class="badge badge-dark badge-pill">@vehicle.Status</td>
+            }
+            else {
+            <td class="badge badge-danger badge-pill">@vehicle.Status</td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+<h3>Bookings</h3>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">RegNo</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Km Rented</th>
+            <th scope="col">Km Returned</th>
+            <th scope="col">Rented</th>
+            <th scope="col">Returned</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var booking in bp.GetBookings())
+        {
+        <tr>
+            <th scope="row">@booking.RegNo</th>
+            <td>@booking.Person</td>
+            <td>@booking.MilesRented</td>
+            @if (booking.MilesReturned != 0)
+            {
+                <td>@booking.MilesReturned</td>
+            }
+            else
+            {
+                <td></td>
+            }
+            @*@if (booking.Cost == 0)
+        {
+            <td></td>
+        }
+        else
+        {
+            <td>@booking.MilesReturned</td>
+        }*@
+
+            <td>@booking.RentDate.ToString("yyyy/MM/dd")</td>
+            @if (booking.Returned != DateTime.MinValue)
+            {
+                <td>@booking.Returned.ToString("yyyy/MM/dd")</td>
+            }
+            else
+            {
+                <td></td>
+            }
+
+
+            @*@if (booking.Cost == 0)
+        {
+            <td></td>
+        }
+        else
+        {
+            <td>@booking.Returned.AddDays(0)</td>
+        }*@
+
+            @if (booking.Cost == 0)
+            {
+                <td></td>
+            }
+            else
+            {
+                <td>@booking.Cost</td>
+
+            }
+
+            @if (booking.Returned != DateTime.MinValue)
+            {
+                <td class="badge badge-success badge-pill">Closed</td>
+            }
+            else
+            {
+                <td class="badge badge-danger badge-pill">Open</td>
+            }
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Customers</h3>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">SSN</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var person in bp.GetCustomers())
+        {
+            <tr>
+                <th scope="row">@person.SSN</th>
+                <td>@person.FirstName</td>
+                <td>@person.LastName</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@code{
+
+    BookingProcessor bp = new BookingProcessor();
+    //List<IBooking> bookings = new List<IBooking>();
+    //List<IPerson> persons = new List<IPerson>();
+    //List<IVehicle> vehicles = new List<IVehicle>();
+
+
+
+
+    //protected override void OnInitialized()
+    //{
+    //    bookings = bp.GetBookings().ToList();
+
+    //    vehicles = bp.GetVehicles().ToList();
+
+    //    persons = bp.GetCustomers().ToList();
+
+    //}
+
+    //Car car = new Car();
+
+
+    //void TestCar()
+    //{
+    //    car.Drive(0);
+    //}
+
+}
