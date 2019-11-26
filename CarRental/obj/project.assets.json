@@ -71,11 +71,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\CarRental\\CarRental.csproj",
+      "projectUniqueName": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\CarRental\\CarRental.csproj",
       "projectName": "CarRental",
-      "projectPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\CarRental\\CarRental.csproj",
+      "projectPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\CarRental\\CarRental.csproj",
       "packagesPath": "C:\\Users\\Fernanda Ek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\CarRental\\obj\\",
+      "outputPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\CarRental\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -94,11 +94,11 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Business\\Car Rental.Business.csproj": {
-              "projectPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Business\\Car Rental.Business.csproj"
+            "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Business\\Car Rental.Business.csproj": {
+              "projectPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Business\\Car Rental.Business.csproj"
             },
-            "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj": {
-              "projectPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj"
+            "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj": {
+              "projectPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj"
             }
           }
         }

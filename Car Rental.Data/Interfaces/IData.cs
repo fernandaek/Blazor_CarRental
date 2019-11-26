@@ -19,5 +19,23 @@ namespace Car_Rental.Data.Interfaces
         IVehicle GetVehicle(string registrationNumber);
         IVehicle GetVehicle(int id);
 
+        //VG DELEN
+        int NextVehicle { get; }
+        int NextPerson { get; }
+        int NextBookingId { get; }
+
+        void AddVehicle(IVehicle vehicle);
+        void AddPerson(IPerson customer);
+
+        IBooking RentVehicle(int vehicleId, int customerId);
+        IBooking ReturnVehicle(int vehicleId);
+
+
+        //Default interfaces methods
+        public string[] VehicleStatuses => Enum.GetNames(typeof(VehicleStatuses));
+        public VehicleStatuses GetVehicleStatus(string name) => (VehicleStatuses)Enum.Parse(typeof(VehicleStatuses), name);
+        public string[] VehicleTypeNames => Enum.GetNames(typeof(VehicleTypes));
+        public VehicleTypes GetVehicleType(string name) => (VehicleTypes)Enum.Parse(typeof(VehicleTypes), name);
+
     }
 }

@@ -6522,11 +6522,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Tests\\Car Rental.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Tests\\Car Rental.Tests.csproj",
       "projectName": "Car Rental.Tests",
-      "projectPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Tests\\Car Rental.Tests.csproj",
+      "projectPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Tests\\Car Rental.Tests.csproj",
       "packagesPath": "C:\\Users\\Fernanda Ek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Tests\\obj\\",
+      "outputPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -13,7 +13,7 @@ namespace Car_Rental.Common.Classes
         {
         }
 
-        public Car(int id, string RegistrationNumber, string make, int odometer, double costKM, VehicleTypes types, VehicleStatuses status)
+        public Car(int id, string RegistrationNumber, string make, double odometer, double costKM, VehicleTypes types, VehicleStatuses status)
             : base(id, RegistrationNumber, make, odometer, costKM, types, status)
         {
         }

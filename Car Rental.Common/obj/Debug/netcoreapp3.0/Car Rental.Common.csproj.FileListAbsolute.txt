@@ -6,3 +6,11 @@ C:\Users\Fernanda Ek\source\repos\CarRental\Car Rental.Common\obj\Debug\netcorea
 C:\Users\Fernanda Ek\source\repos\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.AssemblyInfo.cs
 C:\Users\Fernanda Ek\source\repos\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.dll
 C:\Users\Fernanda Ek\source\repos\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.pdb
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\bin\Debug\netcoreapp3.0\Car Rental.Common.deps.json
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\bin\Debug\netcoreapp3.0\Car Rental.Common.dll
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\bin\Debug\netcoreapp3.0\Car Rental.Common.pdb
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.csprojAssemblyReference.cache
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.AssemblyInfoInputs.cache
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.AssemblyInfo.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.dll
+C:\Users\Fernanda Ek\Documents\EC Utbildning\SharePoint Utbildning\C-Sharp\Projektarbete CAR RENTAL\CarRental\Car Rental.Common\obj\Debug\netcoreapp3.0\Car Rental.Common.pdb

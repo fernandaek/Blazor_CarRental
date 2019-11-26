@@ -48,5 +48,45 @@ namespace Car_Rental.Business.Classes
         {
             return _db.GetVehicle(vehicleId);
         } 
+
+        public void AddVehicle(string make, string registationNumber, double odometer, double costKm, VehicleStatuses status, VehicleTypes type)
+        {
+            _db.AddVehicle(new Car(_db.NextVehicle, registationNumber, make, odometer, costKm, type, status));
+        }
+
+        public void AddCustomer(int socialSecurityNumber, string firstName, string lastName)
+        {
+            _db.AddPerson(new Customer(firstName, lastName, socialSecurityNumber, _db.NextPerson));
+        }
+
+        public IBooking RentVehicle (int vehicleId, int customerId)
+        {
+            return _db.RentVehicle(vehicleId, customerId);
+        }
+
+        public IBooking ReturnVehicle( int vehicleId, double distance)
+        {
+            var vehicle = GetVehicle(vehicleId);
+            vehicle.Drive(distance);
+            var booking = _db.ReturnVehicle(vehicleId);
+            vehicle.Status = VehicleStatuses.Available;
+
+            return booking;
+        }
+
+
+        //Calling default interfaces
+        public string[] VehicleStatusNames => _db.VehicleTypeNames;
+        public string[] VehicleTypeNames => _db.VehicleTypeNames;
+
+        public VehicleStatuses GetVehicleStatus(string name)
+        {
+            return _db.GetVehicleStatus(name);
+        }
+
+        public VehicleTypes GetVehicleType(string name)
+        {
+            return _db.GetVehicleType(name);
+        }
     }
 }

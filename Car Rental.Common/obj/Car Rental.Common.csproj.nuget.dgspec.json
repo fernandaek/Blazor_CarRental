@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj": {}
+    "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj": {
+    "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj",
         "projectName": "Car Rental.Common",
-        "projectPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj",
+        "projectPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\Car Rental.Common.csproj",
         "packagesPath": "C:\\Users\\Fernanda Ek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fernanda Ek\\source\\repos\\CarRental\\Car Rental.Common\\obj\\",
+        "outputPath": "C:\\Users\\Fernanda Ek\\Documents\\EC Utbildning\\SharePoint Utbildning\\C-Sharp\\Projektarbete CAR RENTAL\\CarRental\\Car Rental.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

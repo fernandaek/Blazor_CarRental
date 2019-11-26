@@ -16,6 +16,12 @@ namespace Car_Rental.Data.Classes
         readonly List<IVehicle> _vehicles = new List<IVehicle>();
         readonly List<IBooking> _bookings = new List<IBooking>();
 
+        public int NextVehicle => _vehicles.Count.Equals(0) ? 1 : _vehicles.Max(v => v.Id) + 1;
+
+        public int NextPerson => _persons.Count.Equals(0) ? 1 : _persons.Max(p => p.Id) + 1;
+
+        public int NextBookingId => _bookings.Count.Equals(0) ? 1 : _bookings.Max(b => b.Id) + 1;
+
         public CollectionData()
         {
             SeedData();
@@ -107,7 +113,40 @@ namespace Car_Rental.Data.Classes
             return _vehicles;
         }
 
+        //VG DEL
 
+        public void AddVehicle(IVehicle vehicle)
+        {
+            _vehicles.Add(vehicle);
+        }
+
+        public void AddPerson(IPerson customer)
+        {
+            _persons.Add(customer);
+        }
+
+        public IBooking RentVehicle(int vehicleId, int customerId)
+        {
+            var vehicle = GetVehicle(vehicleId);
+            var customer = GetPerson(customerId);
+
+            var newBooking = new Booking(NextBookingId, vehicle, customer);
+
+            _bookings.Add(newBooking);
+
+            return _bookings.Single(b => b.Id.Equals(newBooking.Id));
+           // return newBooking;
+        }
+
+        public IBooking ReturnVehicle(int vehicleId)
+        {
+            var booking = _bookings.Single(b => b.VehicleId.Equals(vehicleId) && b.Returned == default);
+            var vehicle = GetVehicle(vehicleId);
+
+            booking.ReturnVehicle(vehicle);
+
+            return booking;
+        }
 
 
         //Trying calculate price

@@ -33,7 +33,7 @@ namespace Car_Rental.Common.Classes
  
         }
 
-        protected Vehicles(int id, string registrationNumber, string make, int odometer, double costKM, VehicleTypes type, VehicleStatuses status)
+        protected Vehicles(int id, string registrationNumber, string make, double odometer, double costKM, VehicleTypes type, VehicleStatuses status)
         {
             Id = id;
             RegistrationNumber = registrationNumber;

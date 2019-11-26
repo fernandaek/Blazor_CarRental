@@ -2,12 +2,14 @@
 
 @using Car_Rental.Business.Classes
 @using Car_Rental.Common.Enums
+@using Car_Rental.Common.Interfaces
 
 <h1>Car Rental Assignment - C# .Net Blazor</h1>
 
 <h3>Vehicles</h3>
 <table class="table">
     <thead class="thead-dark">
+
         <tr>
             <th scope="col">RegNo</th>
             <th scope="col">Make</th>
@@ -15,28 +17,62 @@
             <th scope="col">Cost km</th>
             <th scope="col">Vehicle type</th>
             <th scope="col">$ Day</th>
+            <th scope="col">Action</th>
             <th scope="col">Status</th>
         </tr>
     </thead>
 
     <tbody>
+        <tr>
+            <th scope="row"><input @bind="regNo" placeholder="RegNo"/></th>
+            <td><input @bind="make" placeholder="Make"/></td>
+            <td><input @bind="odometer" placeholder="Odometer" /></td>
+            <td><input @bind="cost" placeholder="Cost" /></td>
+            <td>
+                <select @bind="vehicleType">
+                    @foreach(var type in bp.VehicleTypeNames)
+                    {
+                      <option value=@type>@type</option>
+                    }
+                </select>
+            </td>
+            <td></td>
+            <td><button @onclick="AddVehicle" class="btn btn-outline-success">Add</button></td>
+        </tr>
+
         @foreach (var vehicle in bp.GetVehicles())
         {
-        <tr>
-            <th scope="row">@vehicle.RegistrationNumber</th>
-            <td>@vehicle.Make</td>
-            <td>@vehicle.Odometer</td>
-            <td>@vehicle.CostKM</td>
-            <td>@vehicle.Type</td>
-            <td>@vehicle.CostPerDay</td>
-            @if (vehicle.Status == VehicleStatuses.Available)
-            {
-                <td class="badge badge-dark badge-pill">@vehicle.Status</td>
-            }
-            else {
-            <td class="badge badge-danger badge-pill">@vehicle.Status</td>
-            }
-        </tr>
+
+            <tr>
+                <th scope="row">@vehicle.RegistrationNumber</th>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Odometer</td>
+                <td>@vehicle.CostKM</td>
+                <td>@vehicle.Type</td>
+                <td>@vehicle.CostPerDay</td>
+                @if (vehicle.Status == VehicleStatuses.Available)
+                {
+                    <td>
+                        <select @bind="customerId">
+                            @foreach(var customer in bp.GetCustomers())
+                            {
+                            <option value=@customer.Id>@customer.FirstName @customer.LastName (@customer.SSN)</option>
+                            }
+                        </select>
+                        @*e stands for event parameter for the mouse event *@ 
+                        <button @onclick="@(e => RentVehicle(vehicle.Id))" class="btn btn-outline-primary">Rent</button>
+                    </td>
+                    <td class="badge badge-dark badge-pill">@vehicle.Status</td>
+                }
+                else
+                {
+                    <td>
+                        <input @bind="distance" placeholder="Distance" />
+                        <button @onclick="@(e => ReturnVehicle(vehicle.Id))" class="btn btn-outline-success">Return</button>
+                    </td>
+                    <td class="badge badge-danger badge-pill">@vehicle.Status</td>
+                }
+            </tr>
         }
     </tbody>
 </table>
@@ -137,9 +173,16 @@
     </thead>
 
     <tbody>
-        @foreach (var person in bp.GetCustomers())
-        {
-            <tr>
+        <tr>
+            <th scope="row"><input @bind="socialSecurityNumber" placeholder="SSN" /></th>
+            <td><input @bind="firstName" placeholder="FirstName" /></td>
+            <td><input @bind="lastName" placeholder="LastName" /></td>
+            <td><button @onclick="AddCustomer" class="btn btn-outline-success">Add</button></td>
+
+        </tr>
+                @foreach (var person in bp.GetCustomers())
+                {
+<tr>
                 <th scope="row">@person.SSN</th>
                 <td>@person.FirstName</td>
                 <td>@person.LastName</td>
@@ -152,29 +195,48 @@
 @code{
 
     BookingProcessor bp = new BookingProcessor();
+    IEnumerable<IVehicle> vehicles;
     //List<IBooking> bookings = new List<IBooking>();
     //List<IPerson> persons = new List<IPerson>();
     //List<IVehicle> vehicles = new List<IVehicle>();
 
+    string regNo = string.Empty;
+    string make = string.Empty;
+    double odometer = default;
+    double cost = default;
+    string vehicleType = string.Empty;
+    int socialSecurityNumber = default;
+    string firstName = string.Empty;
+    string lastName = string.Empty;
+    int customerId = default;
+    double distance = default;
 
 
 
-    //protected override void OnInitialized()
-    //{
-    //    bookings = bp.GetBookings().ToList();
+    protected override void OnInitialized()
+    {
+        //    bookings = bp.GetBookings().ToList();
 
-    //    vehicles = bp.GetVehicles().ToList();
+        //    vehicles = bp.GetVehicles().ToList();
 
-    //    persons = bp.GetCustomers().ToList();
+        //    persons = bp.GetCustomers().ToList();
 
-    //}
+    }
 
-    //Car car = new Car();
+    void ReturnVehicle(int id) {
+        bp.ReturnVehicle(id, distance);
+    }
+    void RentVehicle(int id) {
 
+        bp.RentVehicle(id, customerId);
+    }
 
-    //void TestCar()
-    //{
-    //    car.Drive(0);
-    //}
-
+    void AddCustomer() {
+        var customer = bp.GetCustomers();
+        bp.AddCustomer(socialSecurityNumber, firstName, lastName);
+    }
+    void AddVehicle() {
+        var type = bp.GetVehicleType(vehicleType);
+        bp.AddVehicle(make, regNo, odometer,cost,VehicleStatuses.Available, type);
+    }
 }
