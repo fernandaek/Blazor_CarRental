@@ -67,7 +67,7 @@
                 else
                 {
                     <td>
-                        <input @bind="distance" placeholder="Distance" />
+                        <input class="distance" @bind="distance" placeholder="Distance" />
                         <button @onclick="@(e => ReturnVehicle(vehicle.Id))" class="btn btn-outline-success">Return</button>
                     </td>
                     <td class="badge badge-danger badge-pill">@vehicle.Status</td>
